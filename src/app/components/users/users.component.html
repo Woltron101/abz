@@ -1,0 +1,18 @@
+<h2>Our cheerful users</h2>
+<p class="attention">Attention! Sorting users by registration date</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let user of users; let i = index" class="col-sm-4">
+      <img src="{{ user.photo }}" alt="{{ user.name }}" />
+      <div class="text-wrap">
+        <p>{{ user.email }}</p>
+        <p>{{ user.position }}</p>
+        <p>{{ user.phone }}</p>
+        <!-- <li>{{user.position_id}}</li>
+              <li>{{user.id}}</li>
+              <li>{{user.registration_timestamp}}</li> -->
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
