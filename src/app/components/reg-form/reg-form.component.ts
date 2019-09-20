@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-reg-form',
-  templateUrl: './reg-form.component.html',
-  styleUrls: ['./reg-form.component.scss']
+  selector: "app-reg-form",
+  templateUrl: "./reg-form.component.html",
+  styleUrls: ["./reg-form.component.scss"]
 })
 export class RegFormComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  submit(e) {
+    e.peventDefalt();
   }
-
 }

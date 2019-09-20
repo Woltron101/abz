@@ -1,1 +1,58 @@
-<p>reg-form works!</p>
+<h2>Register to get a work</h2>
+<p class="attention">
+  Attention! After successful registration and alert, update the list of users
+  in the block from the top
+</p>
+<div class="container">
+  <div class="row">
+    <form novalidate (submit)="submit($event)">
+      <div class="form-group col-md-4">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          id="name"
+          class="form-control"
+          placeholder="Your name"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          id="email"
+          class="form-control"
+          placeholder="Your email"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label for="phone">Phone</label>
+        <input
+          type="text"
+          formControlName="phone"
+          id="phone"
+          class="form-control"
+          placeholder="+38 (0) 000 00 00"
+        />
+      </div>
+      <div class="col-md-6">
+        <select name="" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <input type="file" class="form-control photo" formControlName="photo" />
+
+        <input type="text" class="form-control" />
+        <button class="upload">Upload</button>
+      </div>
+      <div class="clearfix"></div>
+      <button type="submit" (click)="submit($event)">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>
