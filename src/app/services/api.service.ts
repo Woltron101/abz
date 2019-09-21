@@ -20,6 +20,10 @@ export class ApiService {
     });
   }
 
+  public getUser(num: number) {
+    return this.http.get(this.apiUrl + "users/" + num);
+  }
+
   public postUser(data) {
     this.http
       .post(this.apiUrl + "users", data, { headers: this.headers })

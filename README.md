@@ -8,6 +8,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 [specification](https://goo.gl/kpgqMo)
 
-[mockups](https://drive.google.com/drive/folders/18KH1Tsx8Ky0QSK8Qe3Qpzst5LfJau3tQ)
+[mockups](https://drive.google.com/drive/folders/15swSZfjLOBqxdmewfNx4fEYC7cr0gr_W)
 
 [api](https://anypoint.mulesoft.com/apiplatform/abz-dn-ua/#/portals/organizations/53806f58-49a2-4aea-bae9-91ca570e4f4d/apis/210954541/versions/15529224)

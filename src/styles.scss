@@ -119,3 +119,9 @@ button.fill {
     color: #8d8c8c;
   }
 }
+footer a:hover {
+  color: $primary-color !important;
+  svg {
+    fill: $primary-color !important;
+  }
+}

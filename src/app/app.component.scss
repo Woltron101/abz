@@ -243,12 +243,12 @@ footer {
   }
 }
 
-footer a:hover {
-  color: $primary-color !important;
-  svg {
-    fill: $primary-color !important;
-  }
-}
+// footer a:hover {
+//   color: $primary-color !important;
+//   svg {
+//     fill: $primary-color !important;
+//   }
+// }
 
 @media screen and (max-width: 992px) {
   .testAssignment {

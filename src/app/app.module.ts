@@ -9,9 +9,10 @@ import { AngularSvgIconModule } from "angular-svg-icon";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSelectModule } from "@angular/material/select";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AuthorizedUserComponent } from './components/authorized-user/authorized-user.component';
 
 @NgModule({
-  declarations: [AppComponent, RegFormComponent, UsersComponent],
+  declarations: [AppComponent, RegFormComponent, UsersComponent, AuthorizedUserComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
