@@ -1,2 +1,236 @@
-<app-reg-form></app-reg-form>
-<app-users></app-users>
+<header>
+  <div class="container">
+    <svg-icon
+      class="logo"
+      src="../assets/logo/logo.svg"
+      [svgStyle]="{ 'width.px': 134 }"
+    ></svg-icon>
+    <ul class="menu">
+      <li><a href="#about">About me</a></li>
+      <li><a href="#relationships">Relationships</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#users">Users</a></li>
+      <li><a href="#signUp">Sign Up</a></li>
+    </ul>
+  </div>
+</header>
+<div class="testAssignment" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="wrap col-md-6">
+        <h1>
+          Test assignment for Frontend Developer position
+        </h1>
+        <p>
+          We kindly remind you that your test assignment should be submitted as
+          a link to github/bitbucket repository. Please be patient, we consider
+          and respond to every application that meets minimum requirements. We
+          look forward to your submission. Good luck!
+        </p>
+
+        <button class="fill">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="quainted">
+  <div class="container">
+    <div class="row">
+      <h2>Let's get ac quainted</h2>
+      <div class="col-md-4 img-wrap">
+        <svg-icon src="../assets/imgs/man-mobile.svg"></svg-icon>
+      </div>
+      <div class="col-md-8">
+        <h3>I am cool frontend developer</h3>
+        <div class="wrap">
+          <p>
+            When real users have a slow experience on mobile, they're much less
+            likely to find what they are looking for or purchase from you in the
+            future. For many sites this equates to a huge missed opportunity,
+            especially when more than half of visits are abandoned if a mobile
+            page takes over 3 seconds to load.&nbsp;
+          </p>
+          <p>
+            Last week, Google Search and Ads teams announced two new speed
+            initiatives to help improve user-experience on the web.
+          </p>
+        </div>
+        <a href="#" class="sign-up">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about" id="relationships">
+  <div class="container">
+    <div class="row">
+      <h2>
+        About my relationships with web-development
+      </h2>
+      <div class="col-md-4">
+        <svg-icon src="../assets/imgs/html.svg"></svg-icon>
+        <h3>I'm in love with HTML</h3>
+        <p>
+          Hypertext Markup Language (HTML) is the standard markup language for
+          creating web pages and web applications.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <svg-icon src="../assets/imgs/css.svg"></svg-icon>
+        <h3>CSS is my best friend</h3>
+        <p>
+          Cascading Style Sheets (CSS) is a &nbsp;style sheet language used for
+          describing the presentation of a document written in a markup language
+          like HTML.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <svg-icon src="../assets/imgs/javascript.svg"></svg-icon>
+        <h3>JavaScript is my passion</h3>
+        <p>
+          JavaScript is a high-level, interpreted programming language. It is a
+          language which is also characterized as dynamic, weakly typed,
+          prototype-based and multi-paradigm.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="requirements" id="requirements">
+  <div class="container">
+    <div class="row">
+      <h2>General requirements for the test task</h2>
+      <div class="col-md-6">
+        <p>
+          Users want to find answers to their questions quickly and data shows
+          that people really care about how quickly their pages load. The Search
+          team announced speed would be a ranking signal for desktop searches in
+          2010 and as of this month (July 2018), page speed will be a ranking
+          factor for mobile searches too.
+        </p>
+        <p>
+          If you're a developer working on a site, now is a good time to
+          evaluate your performance using our speed tools. Think about how
+          performance affects the user experience of your pages and consider
+          measuring a variety of real-world user-centric performance metrics.
+        </p>
+        <p>
+          Are you shipping too much JavaScript? Too many images? Images and
+          JavaScript are the most significant contributors to the page weight
+          that affect page load time based on data from HTTP Archive and the
+          Chrome User Experience Report - our public dataset for key UX metrics
+          as experienced by Chrome users under real-world conditions.
+        </p>
+      </div>
+      <div class="col-md-6 svg-wrap">
+        <svg-icon src="../assets/imgs/man-laptop-v1.svg"></svg-icon>
+      </div>
+    </div>
+  </div>
+</div>
+<app-users id="users"></app-users>
+<app-reg-form id="signUp"></app-reg-form>
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <svg-icon
+        src="../assets/logo/logo.svg"
+        [svgStyle]="{ 'width.px': 134, color: '#fff' }"
+      ></svg-icon>
+      <ul class="menu">
+        <li><a href="#">About me</a></li>
+        <li><a href="#">Relationships</a></li>
+        <li><a href="#">Requirements</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+    </div>
+    <!-- <br> -->
+    <div class="footer-bottom">
+      <div class="contacts">
+        <div class="contact">
+          <a href=""
+            ><svg-icon src="../assets/icons/mail.svg"></svg-icon
+            ><span>work.of.future@gmail.com</span></a
+          >
+        </div>
+        <div class="contact">
+          <a href=""
+            ><svg-icon src="../assets/icons/phone.svg"></svg-icon
+            ><span>+38 (050) 789 24 98</span></a
+          >
+        </div>
+        <div class="contact">
+          <a href=""
+            ><svg-icon src="../assets/icons/cellphone.svg"></svg-icon
+            ><span>+38 (095) 556 08 45</span></a
+          >
+        </div>
+      </div>
+      <ul class="nav">
+        <li>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Conditions</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Examples</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">Collaborate</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="under-footer-bottom">
+      <div class="copy">© abz.agency specially for the test task</div>
+      <ul class="social">
+        <li>
+          <a href="#"
+            ><svg-icon src="../assets/icons/pinterest.svg"></svg-icon
+          ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><svg-icon src="../assets/icons/twitter.svg"></svg-icon
+          ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><svg-icon src="../assets/icons/instagram.svg"></svg-icon
+          ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><svg-icon src="../assets/icons/linkedin.svg"></svg-icon
+          ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><svg-icon src="../assets/icons/facebook.svg"></svg-icon
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

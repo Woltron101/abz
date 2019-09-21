@@ -1,4 +1,4 @@
-<h2>Register to get a work</h2>
+<!-- <h2>Register to get a work</h2>
 <p class="attention">
   Attention! After successful registration and alert, update the list of users
   in the block from the top
@@ -37,11 +37,16 @@
         />
       </div>
       <div class="col-md-6">
-        <select name="" id="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
+        <mat-form-field class="pos-select">
+          <mat-select
+            placeholder="Select your position"
+            formControlName="position_id"
+          >
+            <mat-option *ngFor="let pos of positions" [value]="pos.id">
+              {{ pos.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="form-group col-md-6">
         <input type="file" class="form-control photo" formControlName="photo" />
@@ -51,6 +56,164 @@
       </div>
       <div class="clearfix"></div>
       <button type="submit" (click)="submit($event)">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div> -->
+<h2>Register to get a work</h2>
+<p class="attention">
+  Attention! After successful registration and alert, update the list of users
+  in the block from the top
+</p>
+<div class="container">
+  <div class="row">
+    <form [formGroup]="userRegForm" novalidate (submit)="submit($event)">
+      <div
+        class="form-group col-md-4"
+        [ngClass]="{
+          'has-error':
+            userRegForm.get('name').invalid && validateOnChanges('name'),
+          'has-success': userRegForm.get('name').valid
+        }"
+      >
+        <label for="name">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          id="name"
+          class="form-control"
+          placeholder="Your name"
+        />
+        <p
+          class="error-msg"
+          *ngIf="
+            userRegForm.get('name').errors?.minlength ||
+            userRegForm.get('name').errors?.maxlength
+          "
+        >
+          The name must be from 2 to 60 characters
+        </p>
+        <p class="error-msg" *ngIf="userRegForm.get('name').errors?.required">
+          Name is required
+        </p>
+      </div>
+      <div
+        class="form-group col-md-4"
+        [ngClass]="{
+          'has-error':
+            userRegForm.get('email').invalid && validateOnChanges('email'),
+          'has-success': userRegForm.get('email').valid
+        }"
+      >
+        <label for="email">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          id="email"
+          class="form-control"
+          placeholder="Your email"
+        />
+        <p class="error-msg" *ngIf="userRegForm.get('email').errors?.pattern">
+          Email is not valid
+        </p>
+        <p class="error-msg" *ngIf="userRegForm.get('email').errors?.required">
+          Email is required
+        </p>
+      </div>
+      <div
+        class="form-group col-md-4"
+        [ngClass]="{
+          'has-error':
+            userRegForm.get('phone').invalid && validateOnChanges('phone'),
+          'has-success': userRegForm.get('phone').valid
+        }"
+      >
+        <label for="phone">Phone</label>
+        <input
+          type="text"
+          formControlName="phone"
+          id="phone"
+          class="form-control"
+          placeholder="+38 (0) 000 00 00"
+        />
+        <p class="error-msg" *ngIf="userRegForm.get('phone').errors?.minlength">
+          The phone should start with the code of Ukraine +380 and have 9 digits
+        </p>
+        <p class="error-msg" *ngIf="userRegForm.get('phone').errors?.required">
+          Phone is required
+        </p>
+      </div>
+      <div
+        class="col-md-6"
+        [ngClass]="{
+          'has-error':
+            userRegForm.get('position_id').invalid &&
+            validateOnChanges('position_id'),
+          'has-success': userRegForm.get('position_id').valid
+        }"
+      >
+        <mat-form-field class="pos-select">
+          <mat-label>Select your position</mat-label>
+          <mat-select formControlName="position_id">
+            <mat-option *ngFor="let pos of positions" [value]="pos.id">
+              {{ pos.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <p
+          class="error-msg"
+          *ngIf="userRegForm.get('position_id').errors?.required"
+        >
+          Position is required
+        </p>
+      </div>
+      <div
+        class="form-group col-md-6"
+        [ngClass]="{
+          'has-error':
+            userRegForm.get('photo').invalid && validateOnChanges('photo'),
+          'has-success': userRegForm.get('photo').valid
+        }"
+      >
+        <input
+          type="file"
+          class="form-control photo"
+          #inputFile
+          (change)="changeFile()"
+          formControlName="photo"
+          accept="image/jpg,image/jpeg"
+          (change)="onFileChange($event)"
+        />
+
+        <input
+          type="text"
+          [value]="inputValue || ''"
+          class="form-control file"
+        />
+        <button (click)="uploadFile($event)" class="upload">Upload</button>
+        <p
+          class="error-msg file"
+          *ngIf="userRegForm.get('photo').errors?.incorrect"
+        >
+          There should be one photo have a minimum resolution of 70x70 pixels,
+          and be no more than 5 megabytes.
+        </p>
+        <p
+          class="error-msg file"
+          *ngIf="userRegForm.get('photo').errors?.required"
+        >
+          Photo is required
+        </p>
+      </div>
+      <div class="clearfix"></div>
+      <button
+        type="submit"
+        (click)="submit($event)"
+        class="sign-up fill"
+        [disabled]="userRegForm.invalid"
+      >
         Sign Up
       </button>
     </form>

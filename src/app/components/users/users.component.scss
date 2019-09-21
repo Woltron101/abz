@@ -1,0 +1,45 @@
+h2 {
+  margin-top: 142px;
+}
+.attention {
+  margin-top: 19px;
+  margin-bottom: 43px;
+}
+.col-sm-4 {
+  margin-top: 18px;
+  height: 180px;
+}
+h3 {
+  font-size: 22px;
+  max-height: 100px;
+  overflow: hidden;
+}
+img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  float: left;
+}
+.text-wrap {
+  margin: 27px 0 0 77px;
+}
+p {
+  margin: 0;
+}
+.show-more {
+  width: 290px;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid #ef6c00;
+  color: #ef6c00;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: transparent;
+  margin: 0 auto;
+  position: relative;
+  top: -15px;
+  display: block;
+  &:hover {
+    background-color: rgba(252, 131, 31, 0.2);
+  }
+}
