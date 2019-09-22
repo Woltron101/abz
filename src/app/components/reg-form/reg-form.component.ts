@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormControl, Validators, FormGroup } from "@angular/forms";
-import { ApiService } from "src/app/services/api.service";
+import { ApiService, Position } from "src/app/services/api.service";
 
 @Component({
   selector: "app-reg-form",
@@ -40,10 +40,10 @@ export class RegFormComponent implements OnInit {
       photo: new FormControl("", [Validators.required])
     });
   }
-  submit(e) {
-    e.preventDefault();
+  submit(event) {
+    event.preventDefault();
     const formData: FormData = new FormData();
-    const photo = this.inputFile.nativeElement.files[0];
+    const photo: string = this.inputFile.nativeElement.files[0];
     const values = this.userRegForm.value;
 
     values.photo = photo;
@@ -54,26 +54,22 @@ export class RegFormComponent implements OnInit {
     }
     this.api.postUser(formData);
   }
-  validateOnChanges(formControlName) {
+  validateOnChanges(formControlName: string): boolean {
     return (
       this.userRegForm.get(formControlName).dirty ||
       this.userRegForm.get(formControlName).touched
     );
   }
-  private uploadFile(e) {
-    e.preventDefault();
+  private uploadFile(event): void {
+    event.preventDefault();
     this.inputFile.nativeElement.click();
   }
-  private changeFile() {
+  private changeFile(): void {
     this.inputValue = this.inputFile.nativeElement.value;
-    console.log(
-      "this.inputFile.nativeElement.value ",
-      this.inputFile.nativeElement.value
-    );
   }
   private onFileChange(event) {
     let valid = { size: null };
-    const img = new Image();
+    const img: HTMLImageElement = new Image();
 
     if (window.URL && event.target.files && event.target.files[0]) {
       img.src = window.URL.createObjectURL(
@@ -90,8 +86,4 @@ export class RegFormComponent implements OnInit {
       };
     }
   }
-}
-interface Position {
-  id: string;
-  name: string;
 }

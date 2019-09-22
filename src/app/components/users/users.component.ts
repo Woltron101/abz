@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { ApiService } from "src/app/services/api.service";
+import { ApiService, User } from "src/app/services/api.service";
 
 @Component({
   selector: "app-users",
@@ -29,14 +29,4 @@ export class UsersComponent implements OnInit {
       if (resp.total_users === this.users.length) this.disabledBtn = true;
     });
   }
-}
-export interface User {
-  email: string;
-  id: string | number;
-  name: string;
-  phone: string;
-  photo: string;
-  position: string;
-  position_id?: string | number;
-  registration_timestamp?: number;
 }

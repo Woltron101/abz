@@ -10,9 +10,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSelectModule } from "@angular/material/select";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthorizedUserComponent } from './components/authorized-user/authorized-user.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
 
 @NgModule({
-  declarations: [AppComponent, RegFormComponent, UsersComponent, AuthorizedUserComponent],
+  declarations: [AppComponent, RegFormComponent, UsersComponent, AuthorizedUserComponent, ReadMoreComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

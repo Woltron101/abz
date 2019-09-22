@@ -1,0 +1,12 @@
+<div
+  [class.collapsed]="isCollapsed"
+  [style.height]="isCollapsed ? maxHeight + 'px' : 'auto'"
+>
+  <ng-content></ng-content>
+</div>
+<a
+  *ngIf="isCollapsable"
+  class="collapseLink"
+  (click)="isCollapsed = !isCollapsed"
+  >...</a
+>

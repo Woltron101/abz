@@ -22,6 +22,9 @@ img {
 }
 .text-wrap {
   margin: 27px 0 0 77px;
+  * {
+    word-wrap: break-word;
+  }
 }
 p {
   margin: 0;
