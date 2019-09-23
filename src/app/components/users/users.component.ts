@@ -14,19 +14,29 @@ export class UsersComponent implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.api.getUsers(this.page || 1).subscribe((resp: any) => {
-      this.users = resp["users"];
+    this.api
+      .getUsers(this.page || 1, window.innerWidth < 480)
+      .subscribe((resp: any) => {
+        this.users = resp["users"];
+      });
+    this.api.$postUser.subscribe(id => {
+      this.api.getUser(id).subscribe(user => {
+        this.users.unshift(user.user);
+        this.users.pop();
+      });
     });
   }
 
   private showMore(): void {
-    this.api.getUsers(++this.page).subscribe((resp: any) => {
-      console.log("this.users ", this.users);
-      this.users.push(...resp["users"]);
-      this.users = this.users.sort(function(a, b) {
-        return b.registration_timestamp - a.registration_timestamp;
+    this.api
+      .getUsers(++this.page, window.innerWidth < 480)
+      .subscribe((resp: any) => {
+        console.log("this.users ", this.users);
+        this.users.push(...resp["users"]);
+        this.users = this.users.sort(function(a, b) {
+          return b.registration_timestamp - a.registration_timestamp;
+        });
+        if (resp.total_users === this.users.length) this.disabledBtn = true;
       });
-      if (resp.total_users === this.users.length) this.disabledBtn = true;
-    });
   }
 }

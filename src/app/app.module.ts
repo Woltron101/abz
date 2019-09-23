@@ -9,11 +9,20 @@ import { AngularSvgIconModule } from "angular-svg-icon";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSelectModule } from "@angular/material/select";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { AuthorizedUserComponent } from './components/authorized-user/authorized-user.component';
-import { ReadMoreComponent } from './components/read-more/read-more.component';
+import { AuthorizedUserComponent } from "./components/authorized-user/authorized-user.component";
+import { ReadMoreComponent } from "./components/read-more/read-more.component";
+import { NgxMaskModule } from "ngx-mask";
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
-  declarations: [AppComponent, RegFormComponent, UsersComponent, AuthorizedUserComponent, ReadMoreComponent],
+  declarations: [
+    AppComponent,
+    RegFormComponent,
+    UsersComponent,
+    AuthorizedUserComponent,
+    ReadMoreComponent,
+    NavigationComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -21,7 +30,8 @@ import { ReadMoreComponent } from './components/read-more/read-more.component';
     BrowserAnimationsModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,21 @@
 <h2 read-more>Our cheerful users</h2>
-<p class="attention" read-more>Attention! Sorting users by registration date</p>
+<p class="attention" read-more [maxHeightObj]="{ xs: 75 }">
+  Attention! Sorting users by registration date
+</p>
 <div class="container">
   <div class="row">
     <div *ngFor="let user of users; let i = index" class="col-sm-4">
-      <img src="{{ user.photo }}" alt="{{ user.name }}" />
+      <img
+        src="{{
+          user.photo !==
+          'https://frontend-test-assignment-api.abz.agency/images/placeholders/placeholder.png'
+            ? user.photo
+            : '#'
+        }}"
+        alt="{{ user.name }}"
+      />
       <div class="text-wrap">
-        <h3 read-more>{{ user.name }}</h3>
+        <h3 read-more [maxHeightObj]="{ sm: 42 }">{{ user.name }}</h3>
         <p read-more>{{ user.email }}</p>
         <p read-more>{{ user.position }}</p>
         <p read-more>{{ user.phone }}</p>

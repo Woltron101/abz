@@ -54,7 +54,13 @@ input {
   }
 }
 input.photo {
-  display: none;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  &[type="file"] {
+    opacity: 0;
+    z-index: 1;
+  }
 }
 .pos-select {
   width: 100%;
@@ -80,7 +86,7 @@ input.photo {
   top: 0;
   right: 15px;
 }
-.form-group.col-md-6 {
+.form-group.col-sm-6 {
   position: relative;
   height: 55px;
   .form-control.file {
@@ -95,4 +101,50 @@ input.photo {
   border: none;
   margin: 20px auto 148px;
   display: block;
+  @media (max-width: 1200px) {
+    margin-bottom: 136px;
+  }
+}
+@media (max-width: 992px) {
+  h2 {
+    margin-top: 126px;
+  }
+  .attention {
+    width: 370px;
+    margin: 30px auto 44px;
+  }
+  .sign-up {
+    margin-bottom: 117px;
+  }
+}
+
+@media (max-width: 767px) {
+  mat-form-field {
+    margin-top: -20px;
+  }
+  .file {
+    margin-top: -30px;
+  }
+  .upload {
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 26px;
+    margin-top: 60px;
+  }
+  .attention {
+    width: 290px;
+  }
+  .form-group {
+    margin-bottom: 56px;
+  }
+  .sign-up {
+    margin: -7px auto 70px;
+  }
+  .upload {
+    width: 56px;
+  }
 }

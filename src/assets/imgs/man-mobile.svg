@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="289px" height="285px" viewBox="0 0 289 285" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>man-mobile</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
+<svg id="man-mobile">
+ 
         <linearGradient x1="-0.00014597453%" y1="49.9939627%" x2="100.000167%" y2="49.9939627%" id="linearGradient-1">
             <stop stop-color="#2ACAFF" offset="0%"></stop>
             <stop stop-color="#2ADFC3" offset="100%"></stop>
@@ -78,7 +75,7 @@
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="man-mobile">
+        <g >
             <path d="M20.66,196.33 C20.66,196.33 -36.19,140.76 38.72,90.86 C113.63,40.96 194.45,18.41 241.56,24.31 C288.67,30.21 276.8,143.79 236.14,212.77 C195.48,281.75 97.68,278 20.66,196.33 Z" id="_Path_" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
             <path d="M259.94,78.06 C259.94,78.06 325.33,123.31 259.94,185.06 C194.55,246.81 118.6,282.68 71.15,284.8 C23.7,286.92 16.3,173 44.75,98.13 C73.2,23.26 170.29,10.56 259.94,78.06 Z" id="_Path_2" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
             <g id="_Group_3" transform="translate(10.000000, 0.000000)">

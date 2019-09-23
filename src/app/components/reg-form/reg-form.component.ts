@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { FormControl, Validators, FormGroup } from "@angular/forms";
 import { ApiService, Position } from "src/app/services/api.service";
 
@@ -13,10 +12,12 @@ export class RegFormComponent implements OnInit {
   private userRegForm: FormGroup;
   private inputValue: string;
   private positions: Position[];
+  private small: boolean = window.innerWidth < 480;
 
   constructor(private api: ApiService) {}
 
   ngOnInit() {
+    console.log("small ", this.small);
     this.api.getPositions().subscribe((resp: any) => {
       this.positions = resp["positions"];
     });
@@ -45,15 +46,14 @@ export class RegFormComponent implements OnInit {
     const formData: FormData = new FormData();
     const photo: string = this.inputFile.nativeElement.files[0];
     const values = this.userRegForm.value;
-
+    console.log("this.userRegForm ", this.userRegForm);
     values.photo = photo;
     values.phone = "+380" + values.phone;
     values.position_id = +values.position_id;
-    for (let key in values) {
-      formData.append(key, values[key]);
-    }
+    for (let key in values) formData.append(key, values[key]);
     this.api.postUser(formData);
   }
+
   validateOnChanges(formControlName: string): boolean {
     return (
       this.userRegForm.get(formControlName).dirty ||

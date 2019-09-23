@@ -42,7 +42,63 @@ p {
   position: relative;
   top: -15px;
   display: block;
+  @media (max-width: 1200px) {
+    margin-top: 22px;
+  }
   &:hover {
     background-color: rgba(252, 131, 31, 0.2);
+  }
+}
+@media (max-width: 1200px) {
+  h2 {
+    margin-top: 90px;
+  }
+}
+@media (max-width: 992px) {
+  img {
+    float: none;
+  }
+  .text-wrap {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .attention {
+    // margin-bottom: 23px;
+  }
+  .col-sm-4 {
+    height: 215px;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+  .show-more {
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 26px;
+    margin-top: 70px;
+  }
+  .attention {
+    font-size: 16px;
+    width: 200px;
+    margin: 19px auto 43px;
+  }
+  .col-sm-4 {
+    margin-bottom: 15px;
+  }
+  img {
+    float: none;
+  }
+  .text-wrap {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .col-sm-4 {
+    height: auto;
+  }
+  .show-more {
+    margin-top: 20px;
   }
 }

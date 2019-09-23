@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -10,15 +10,23 @@ export class ApiService {
     "https://frontend-test-assignment-api.abz.agency/api/v1/";
   private token: string;
   private headers: HttpHeaders;
+  public $postUser = new Subject<number>();
 
   constructor(private http: HttpClient) {
     this.getToken();
+
+    this.$postUser.subscribe({
+      next: v => console.log(`observerA: ${v}`)
+    });
   }
 
-  public getUsers(page: number): Observable<any> {
-    return this.http.get(this.apiUrl + `users?page=${page}&count=6`, {
-      headers: this.headers
-    });
+  public getUsers(page: number, phoneScreen?: boolean): Observable<any> {
+    return this.http.get(
+      this.apiUrl + `users?page=${page}&count=${phoneScreen ? "3" : "6"}`,
+      {
+        headers: this.headers
+      }
+    );
   }
 
   public getUser(num: number): Observable<any> {
@@ -28,16 +36,16 @@ export class ApiService {
   public postUser(data): void {
     this.http
       .post(this.apiUrl + "users", data, { headers: this.headers })
-      .subscribe(resp => console.log(resp));
+      .subscribe(resp => this.$postUser.next(resp["user_id"]));
   }
 
   private getToken(): void {
     this.http.get(this.apiUrl + "token").subscribe(resp => {
       this.token = resp["token"];
       console.log("this.token ", this.token);
-      this.headers = new HttpHeaders()
-        .set("Token", resp["token"])
-        .delete("Content-Type");
+      this.headers = new HttpHeaders({
+        Token: resp["token"]
+      });
     });
   }
   public getPositions(): Observable<any> {

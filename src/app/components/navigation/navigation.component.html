@@ -1,0 +1,21 @@
+<div class="nav-wrap" [ngClass]="isActive ? 'is-active' : null">
+  <div class="navigation">
+    <div class="authorized-user-wrap">
+      <app-authorized-user></app-authorized-user>
+    </div>
+    <ul class="menu" (click)="toggleMenu()">
+      <li><a href="#about">About me</a></li>
+      <li><a href="#relationships">Relationships</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#users">Users</a></li>
+      <li><a href="#signUp">Sign Up</a></li>
+      <li class="sign-out"><a href="#">Sign Out</a></li>
+    </ul>
+  </div>
+  <div class="menu__icon" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <h2 read-more>Register to get a work</h2>
-<p class="attention" read-more>
+<p class="attention" read-more [maxHeightObj]="{ sm: 60 }">
   Attention! After successful registration and alert, update the list of users
   in the block from the top
 </p>
@@ -7,7 +7,7 @@
   <div class="row">
     <form [formGroup]="userRegForm" novalidate (submit)="submit($event)">
       <div
-        class="form-group col-md-4"
+        class="form-group col-sm-4"
         [ngClass]="{
           'has-error':
             userRegForm.get('name').invalid && validateOnChanges('name'),
@@ -36,7 +36,7 @@
         </p>
       </div>
       <div
-        class="form-group col-md-4"
+        class="form-group col-sm-4"
         [ngClass]="{
           'has-error':
             userRegForm.get('email').invalid && validateOnChanges('email'),
@@ -59,7 +59,7 @@
         </p>
       </div>
       <div
-        class="form-group col-md-4"
+        class="form-group col-sm-4"
         [ngClass]="{
           'has-error':
             userRegForm.get('phone').invalid && validateOnChanges('phone'),
@@ -73,6 +73,10 @@
           id="phone"
           class="form-control"
           placeholder="+38 (0) 000 00 00"
+          prefix="+38 (0"
+          mask="00) 000 00 00"
+          value="000000000"
+          [showMaskTyped]="true"
         />
         <p class="error-msg" *ngIf="userRegForm.get('phone').errors?.minlength">
           The phone should start with the code of Ukraine +380 and have 9 digits
@@ -82,7 +86,7 @@
         </p>
       </div>
       <div
-        class="col-md-6"
+        class="col-sm-6 form-group"
         [ngClass]="{
           'has-error':
             userRegForm.get('position_id').invalid &&
@@ -107,7 +111,7 @@
         </p>
       </div>
       <div
-        class="form-group col-md-6"
+        class="form-group col-sm-6"
         [ngClass]="{
           'has-error':
             userRegForm.get('photo').invalid && validateOnChanges('photo'),
@@ -129,7 +133,13 @@
           [value]="inputValue || ''"
           class="form-control file"
         />
-        <button (click)="uploadFile($event)" class="upload">Upload</button>
+
+        <button (click)="uploadFile($event)" class="upload" *ngIf="small">
+          <svg-icon src="../assets/icons/upload.svg"></svg-icon>
+        </button>
+        <button (click)="uploadFile($event)" class="upload" *ngIf="!small">
+          Upload
+        </button>
         <p
           class="error-msg file"
           *ngIf="userRegForm.get('photo').errors?.incorrect"
@@ -149,7 +159,7 @@
         type="submit"
         (click)="submit($event)"
         class="sign-up fill"
-        [disabled]="userRegForm.invalid"
+        [disabled]="userRegForm.status === 'INVALID'"
       >
         Sign Up
       </button>

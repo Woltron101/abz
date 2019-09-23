@@ -125,3 +125,60 @@ footer a:hover {
     fill: $primary-color !important;
   }
 }
+#man-mobile {
+  height: 285px;
+}
+
+@media (min-width: 992px) {
+  #css,
+  #html,
+  #javascript {
+    height: 115px;
+  }
+}
+@media (max-width: 992px) {
+  #man-mobile {
+    transform: scale(0.77);
+    margin: -17px 0 0 -35px;
+    height: 300px;
+  }
+  #css,
+  #html,
+  #javascript {
+    transform: scale(0.9);
+    margin: -10px 0 5px 47px;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    text-align: center;
+  }
+  label {
+    position: absolute;
+    left: 20px;
+    top: -11px;
+  }
+  #css,
+  #html,
+  #javascript {
+    margin: 0 auto;
+    width: 100px;
+    height: 115px;
+  }
+  .footer-top svg {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .man-laptop-v1 {
+    justify-content: center;
+    height: 200px;
+  }
+  .man-laptop-v1 svg {
+    // width: 200px !important;
+    // height: 240px !important;
+    margin-top: -96px;
+    transform: scale(0.6);
+  }
+}
