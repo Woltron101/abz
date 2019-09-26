@@ -9,10 +9,10 @@ import { ApiService, Position } from "src/app/services/api.service";
 })
 export class RegFormComponent implements OnInit {
   @ViewChild("inputFile", { static: false }) inputFile: ElementRef;
-  private userRegForm: FormGroup;
-  private inputValue: string;
-  private positions: Position[];
-  private small: boolean = window.innerWidth < 480;
+  userRegForm: FormGroup;
+  inputValue: string;
+  positions: Position[];
+  small: boolean = window.innerWidth < 480;
 
   constructor(private api: ApiService) {}
 
@@ -60,14 +60,14 @@ export class RegFormComponent implements OnInit {
       this.userRegForm.get(formControlName).touched
     );
   }
-  private uploadFile(event): void {
+  uploadFile(event): void {
     event.preventDefault();
     this.inputFile.nativeElement.click();
   }
-  private changeFile(): void {
+  changeFile(): void {
     this.inputValue = this.inputFile.nativeElement.value;
   }
-  private onFileChange(event) {
+  onFileChange(event) {
     let valid = { size: null };
     const img: HTMLImageElement = new Image();
 

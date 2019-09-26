@@ -1,10 +1,6 @@
 <header>
   <div class="container">
-    <svg-icon
-      class="logo"
-      src="../assets/logo/logo.svg"
-      [svgStyle]="{ 'width.px': 134 }"
-    ></svg-icon>
+    <a href="#"><app-icon name="logo" class="logo"></app-icon></a>
     <app-navigation></app-navigation>
     <div class="authorized-user-wrapper">
       <app-authorized-user></app-authorized-user>
@@ -15,17 +11,17 @@
   <div class="container">
     <div class="row">
       <div class="wrap col-sm-6">
-        <h1 read-more [maxHeightObj]="{ lg: 175, sm: 150, xs: 110 }">
+        <h1 read-more [maxHeightObj]="{ lg: 177, sm: 150, xs: 110 }">
           Test assignment for Frontend Developer position
         </h1>
-        <p read-more [maxHeightObj]="{ lg: 128, sm: 155, xs: 63 }">
+        <p read-more [maxHeightObj]="{ lg: 130, sm: 155, xs: 63 }">
           We kindly remind you that your test assignment should be submitted as
           a link to github/bitbucket repository. Please be patient, we consider
           and respond to every application that meets minimum requirements. We
           look forward to your submission. Good luck!
         </p>
 
-        <button class="fill">Sign Up</button>
+        <a class="fill" href="#signUp">Sign Up</a>
       </div>
     </div>
   </div>
@@ -58,7 +54,7 @@
             initiatives to help improve user-experience on the web.
           </p>
         </div>
-        <a href="#" class="sign-up">Sign Up</a>
+        <a href="#signUp" class="sign-up">Sign Up</a>
       </div>
     </div>
   </div>
@@ -66,11 +62,11 @@
 <div class="about" id="relationships">
   <div class="container">
     <div class="row">
-      <h2 read-more [maxHeightObj]="{ lg: 100 }">
+      <h2 read-more [maxHeightObj]="{ lg: 103 }">
         About my relationships with web-development
       </h2>
       <div class="col-md-4">
-        <svg-icon src="../assets/imgs/html.svg"></svg-icon>
+        <app-icon name="html"></app-icon>
         <h3 read-more>I'm in love with HTML</h3>
         <p read-more [maxHeightObj]="{ lg: 91, xs: 115 }">
           Hypertext Markup Language (HTML) is the standard markup language for
@@ -78,7 +74,7 @@
         </p>
       </div>
       <div class="col-md-4">
-        <svg-icon src="../assets/imgs/css.svg"></svg-icon>
+        <app-icon name="css"></app-icon>
         <h3 read-more>CSS is my best friend</h3>
         <p read-more [maxHeightObj]="{ lg: 91, xs: 115 }">
           Cascading Style Sheets (CSS) is a &nbsp;style sheet language used for
@@ -87,7 +83,7 @@
         </p>
       </div>
       <div class="col-md-4">
-        <svg-icon src="../assets/imgs/javascript.svg"></svg-icon>
+        <app-icon name="javascript"></app-icon>
         <h3 read-more>JavaScript is my passion</h3>
         <p read-more [maxHeightObj]="{ lg: 91, xs: 115 }">
           JavaScript is a high-level, interpreted programming language. It is a
@@ -148,10 +144,7 @@
 <footer>
   <div class="container">
     <div class="footer-top">
-      <svg-icon
-        src="../assets/logo/logo.svg"
-        [svgStyle]="{ 'width.px': 134, color: '#fff' }"
-      ></svg-icon>
+      <a href="#"><app-icon name="logo" class="logo"></app-icon></a>
       <ul class="menu">
         <li><a href="#">About me</a></li>
         <li><a href="#">Relationships</a></li>
@@ -164,22 +157,22 @@
     <div class="footer-bottom">
       <div class="contacts">
         <div class="contact">
-          <a href=""
-            ><svg-icon src="../assets/icons/mail.svg"></svg-icon
-            ><span>work.of.future@gmail.com</span></a
-          >
+          <a href="#">
+            <app-icon name="mail"></app-icon>
+            <span>work.of.future@gmail.com</span>
+          </a>
         </div>
         <div class="contact">
-          <a href=""
-            ><svg-icon src="../assets/icons/phone.svg"></svg-icon
-            ><span>+38 (050) 789 24 98</span></a
-          >
+          <a href="#">
+            <app-icon name="phone"></app-icon>
+            <span>+38 (050) 789 24 98</span>
+          </a>
         </div>
         <div class="contact">
-          <a href=""
-            ><svg-icon src="../assets/icons/cellphone.svg"></svg-icon
-            ><span>+38 (095) 556 08 45</span></a
-          >
+          <a href="#">
+            <app-icon name="cellphone"></app-icon>
+            <span>+38 (095) 556 08 45</span>
+          </a>
         </div>
       </div>
       <ul class="nav">
@@ -221,29 +214,21 @@
     <div class="under-footer-bottom">
       <ul class="social">
         <li>
-          <a href="#"
-            ><svg-icon src="../assets/icons/pinterest.svg"></svg-icon
-          ></a>
+          <a href="#"><app-icon name="pinterest"></app-icon></a>
         </li>
         <li>
-          <a href="#"
-            ><svg-icon src="../assets/icons/twitter.svg"></svg-icon
-          ></a>
+          <a href="#"><app-icon name="twitter"></app-icon></a>
         </li>
         <li>
-          <a href="#"
-            ><svg-icon src="../assets/icons/instagram.svg"></svg-icon
-          ></a>
+          <a href="#"><app-icon name="instagram"></app-icon></a>
         </li>
         <li>
-          <a href="#"
-            ><svg-icon src="../assets/icons/linkedin.svg"></svg-icon
-          ></a>
+          <a href="#"><app-icon name="linkedin"></app-icon></a>
         </li>
         <li>
-          <a href="#"
-            ><svg-icon src="../assets/icons/facebook.svg"></svg-icon
-          ></a>
+          <a href="#">
+            <app-icon name="facebook"></app-icon>
+          </a>
         </li>
       </ul>
       <div class="copy">© abz.agency specially for the test task</div>

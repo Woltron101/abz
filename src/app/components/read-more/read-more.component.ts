@@ -14,10 +14,10 @@ import {
 })
 export class ReadMoreComponent implements AfterViewInit {
   @Input() maxHeightObj: { lg?: number; md?: number; sm?: number; xs?: number };
-  private maxHeight: number;
-  private isCollapsed: boolean = false;
-  private isCollapsable: boolean = false;
-  private innerWidth: any;
+  maxHeight: number;
+  isCollapsed: boolean = false;
+  isCollapsable: boolean = false;
+  innerWidth: any;
 
   constructor(private elementRef: ElementRef, private cdr: ChangeDetectorRef) {}
 
@@ -43,16 +43,13 @@ export class ReadMoreComponent implements AfterViewInit {
     const obj = this.maxHeightObj;
 
     // if (this.maxHeightObj && this.maxHeightObj.xs === 65) debugger;
-    // if (!obj)
-    //   return (this.maxHeight = this.calculateLineHeight(
-    //     this.elementRef.nativeElement
-    //   ));
-    if (width < 480) this.maxHeight = obj.xs || obj.sm || obj.md || obj.lg;
-    else if (width < 768) this.maxHeight = obj.sm || obj.md || obj.lg;
-    else if (width < 992) this.maxHeight = obj.md || obj.lg;
-    if (width > 1200)
-      this.maxHeight =
-        obj.lg || this.calculateLineHeight(this.elementRef.nativeElement);
+    if (obj) {
+      if (width < 480) this.maxHeight = obj.xs || obj.sm || obj.md || obj.lg;
+      else if (width < 768) this.maxHeight = obj.sm || obj.md || obj.lg;
+      else if (width < 992) this.maxHeight = obj.md || obj.lg;
+      if (width > 1200) this.maxHeight = obj.lg;
+    } else
+      this.maxHeight = this.calculateLineHeight(this.elementRef.nativeElement);
   }
   private calculateLineHeight(element: HTMLElement): number {
     let lineHeight: number = parseInt(

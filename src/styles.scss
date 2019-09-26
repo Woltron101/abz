@@ -1,38 +1,14 @@
-// /* You can add global styles to this file, and also import other style files */
-
-// // Custom Theming for Angular Material
-// // For more information: https://material.angular.io/guide/theming
-// @import '~@angular/material/theming';
-// // Plus imports for other components in your app.
-
-// // Include the common styles for Angular Material. We include this here so that you only
-// // have to load a single css file for Angular Material in your app.
-// // Be sure that you only ever include this mixin once!
-// @include mat-core();
-
-// // Define the palettes for your theme using the Material Design palettes available in palette.scss
-// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// // hue. Available color palettes: https://material.io/design/color/
-// $testAssignment-primary: mat-palette($mat-indigo);
-// $testAssignment-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// // The warn palette is optional (defaults to red).
-// $testAssignment-warn: mat-palette($mat-red);
-
-// // Create the theme object (a Sass map containing all of the palettes).
-// $testAssignment-theme: mat-light-theme($testAssignment-primary, $testAssignment-accent, $testAssignment-warn);
-
-// // Include theme styles for core and each component used in your app.
-// // Alternatively, you can import and @include the theme mixins for each component
-// // that you are using.
-// @include angular-material-theme($testAssignment-theme);
-
-// /* You can add global styles to this file, and also import other style files */
-// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "assets/grid/bootstrap.min.css";
 @import "vars.scss";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-// @import "material.scss";
+@import "fonts.css";
+.clerfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
 html,
 body {
   height: 100%;
@@ -41,6 +17,9 @@ body {
   margin: 0;
   background-color: #fff;
   font-family: "Source Sans Pro";
+}
+p {
+  margin: 0;
 }
 h1,
 h2,
@@ -68,16 +47,22 @@ input.form-control {
   border: 1px solid #b7b7b7;
   box-shadow: none;
 }
+.logo {
+  svg.icon {
+    width: 134px;
+  }
+}
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 0;
 }
 .mat-form-field-label {
   display: none;
 }
-.pos-select
-  .mat-form-field-can-float.mat-form-field-should-float
-  .mat-form-field-label {
-  display: none;
+.pos-select {
+  border-color: #666;
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    display: none;
+  }
 }
 footer svg-icon svg {
   fill: #fff;
@@ -119,8 +104,14 @@ button.fill {
     color: #8d8c8c;
   }
 }
+footer a {
+  svg {
+    fill: #fff;
+  }
+}
 footer a:hover {
   color: $primary-color !important;
+
   svg {
     fill: $primary-color !important;
   }
@@ -128,7 +119,16 @@ footer a:hover {
 #man-mobile {
   height: 285px;
 }
-
+svg.icon {
+  width: 25px;
+  height: 25px;
+}
+#relationships {
+  svg.icon {
+    width: 100px;
+    height: 114px;
+  }
+}
 @media (min-width: 992px) {
   #css,
   #html,
@@ -148,16 +148,18 @@ footer a:hover {
     transform: scale(0.9);
     margin: -10px 0 5px 47px;
   }
+  #relationships {
+    svg.icon {
+      width: 100px;
+      height: 152px;
+    }
+  }
 }
 @media (max-width: 767px) {
   body {
     text-align: center;
   }
-  label {
-    position: absolute;
-    left: 20px;
-    top: -11px;
-  }
+
   #css,
   #html,
   #javascript {
@@ -180,5 +182,8 @@ footer a:hover {
     // height: 240px !important;
     margin-top: -96px;
     transform: scale(0.6);
+  }
+  #relationships svg.icon {
+    height: 116px;
   }
 }

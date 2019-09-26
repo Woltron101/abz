@@ -8,9 +8,9 @@ import { ApiService, User } from "src/app/services/api.service";
   styleUrls: ["./users.component.scss"]
 })
 export class UsersComponent implements OnInit {
-  private users: User[];
-  private page: number = 1;
-  private disabledBtn: boolean = false;
+  users: User[];
+  page: number = 1;
+  disabledBtn: boolean = false;
   constructor(private api: ApiService) {}
 
   ngOnInit() {
@@ -18,6 +18,7 @@ export class UsersComponent implements OnInit {
       .getUsers(this.page || 1, window.innerWidth < 480)
       .subscribe((resp: any) => {
         this.users = resp["users"];
+        console.log("resp['users'] ", resp["users"]);
       });
     this.api.$postUser.subscribe(id => {
       this.api.getUser(id).subscribe(user => {
@@ -27,7 +28,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  private showMore(): void {
+  showMore(): void {
     this.api
       .getUsers(++this.page, window.innerWidth < 480)
       .subscribe((resp: any) => {

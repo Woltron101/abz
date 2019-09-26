@@ -1,30 +1,38 @@
 h2 {
   margin-top: 146px;
+  margin-bottom: 18px;
 }
 .attention {
-  margin: 19px 0 53px;
+  margin: 12px 0 66px;
 }
 label {
+  position: relative;
+  top: -10px;
   margin-left: 10px;
   background-color: #fff;
   padding: 5px;
   font-weight: normal;
-  color: #8d8c8c;
+  color: #666;
   font-size: 12px;
 }
 input {
   margin-top: -20px;
+  padding: 10px;
   &.ng-untouched {
-    color: #b7b7b7;
+    color: #666;
   }
   &:focus,
   &:active {
-    border: 2px solid #b7b7b7;
+    border: 2px solid #666;
     box-shadow: none;
+    outline: none;
+  }
+  &.form-control {
+    // border-color: #666;
   }
 }
 .has-success .form-control {
-  border-color: #b7b7b7;
+  // border-color: #666;
 }
 .error-msg {
   display: none;
@@ -97,10 +105,15 @@ input.photo {
     width: calc(100% - 30px);
   }
 }
+.form-control {
+  display: block;
+  width: 100%;
+}
 .sign-up {
   border: none;
   margin: 20px auto 148px;
   display: block;
+
   @media (max-width: 1200px) {
     margin-bottom: 136px;
   }
@@ -111,7 +124,7 @@ input.photo {
   }
   .attention {
     width: 370px;
-    margin: 30px auto 44px;
+    margin: 30px auto 57px;
   }
   .sign-up {
     margin-bottom: 117px;
@@ -127,6 +140,11 @@ input.photo {
   }
   .upload {
     margin-top: -10px;
+  }
+  label {
+    position: absolute;
+    left: 20px;
+    top: -11px;
   }
 }
 

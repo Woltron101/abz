@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./navigation.component.scss"]
 })
 export class NavigationComponent {
-  private isActive: boolean = false;
+  isActive: boolean = false;
   constructor() {}
   toggleMenu() {
     this.isActive = !this.isActive;

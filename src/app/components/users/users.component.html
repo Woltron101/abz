@@ -4,24 +4,17 @@
 </p>
 <div class="container">
   <div class="row">
-    <div *ngFor="let user of users; let i = index" class="col-sm-4">
+    <div *ngFor="let user of users; let i = index" class="col-sm-4 col-xs-6">
       <img
-        src="{{
-          user.photo !==
-          'https://frontend-test-assignment-api.abz.agency/images/placeholders/placeholder.png'
-            ? user.photo
-            : '#'
-        }}"
-        alt="{{ user.name }}"
+        src="{{ user.photo }}"
+        alt="{{ user.name }}
+      "
       />
       <div class="text-wrap">
         <h3 read-more [maxHeightObj]="{ sm: 42 }">{{ user.name }}</h3>
         <p read-more>{{ user.email }}</p>
         <p read-more>{{ user.position }}</p>
         <p read-more>{{ user.phone }}</p>
-        <!-- <li>{{user.position_id}}</li>
-              <li>{{user.id}}</li>
-              <li>{{user.registration_timestamp}}</li> -->
       </div>
     </div>
     <div class="clearfix"></div>
