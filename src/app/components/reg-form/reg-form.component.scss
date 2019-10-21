@@ -146,6 +146,9 @@ input.photo {
     left: 20px;
     top: -11px;
   }
+  .has-error p.file {
+    top: 75px;
+  }
 }
 
 @media (max-width: 480px) {

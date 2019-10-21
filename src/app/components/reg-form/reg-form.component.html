@@ -97,7 +97,11 @@
         <mat-form-field class="pos-select">
           <mat-label>Select your position</mat-label>
           <mat-select formControlName="position_id">
-            <mat-option *ngFor="let pos of positions" [value]="pos.id">
+            <mat-option
+              role="option"
+              *ngFor="let pos of positions"
+              [value]="pos.id"
+            >
               {{ pos.name }}
             </mat-option>
           </mat-select>
@@ -118,7 +122,9 @@
           'has-success': userRegForm.get('photo').valid
         }"
       >
+        <label for="file" style="display: none">1</label>
         <input
+          id="file"
           type="file"
           class="form-control photo"
           #inputFile
@@ -127,8 +133,9 @@
           accept="image/jpg,image/jpeg"
           (change)="onFileChange($event)"
         />
-
+        <label for="file2" style="display: none">1</label>
         <input
+          id="file2"
           type="text"
           [value]="inputValue || ''"
           class="form-control file"
@@ -166,3 +173,8 @@
     </form>
   </div>
 </div>
+<app-modal
+  [content]="modalContent"
+  class="{{ modalContent.length ? 'active' : '' }}"
+  (onClose)="closeModal()"
+></app-modal>

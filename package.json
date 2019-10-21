@@ -23,6 +23,7 @@
     "@angular/pwa": "^0.803.2",
     "@angular/router": "~8.2.0",
     "@angular/service-worker": "~8.2.0",
+    "angular-material": "^1.1.20",
     "angular-svg-icon": "^8.0.0",
     "bootstrap": "^3.4.1",
     "ngx-mask": "^8.0.3",

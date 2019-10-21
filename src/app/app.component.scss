@@ -330,7 +330,7 @@ footer {
     padding-bottom: 88px;
     background: url("../assets/imgs/third-block-bg/third-block-bg-1024x755.jpg")
       0 50% no-repeat;
-    background-image: none !important;
+    // background-image: none !important;
     h2 {
       width: 425px;
       margin: 7px auto 50px;
@@ -356,7 +356,7 @@ footer {
 @media (max-width: 788px) {
   #requirements {
     background: url("../assets/imgs/third-block-bg/third-block-bg-768x878.jpg");
-    background-image: none !important;
+    // background-image: none !important;
   }
 }
 @media (max-width: 767px) {

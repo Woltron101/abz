@@ -15,7 +15,8 @@ import { NgxMaskModule } from "ngx-mask";
 import { NavigationComponent } from "./components/navigation/navigation.component";
 import { IconComponent } from "./components/icon/icon.component";
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { environment } from "../environments/environment";
+import { ModalComponent } from "./components/modal/modal.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { environment } from '../environments/environment';
     AuthorizedUserComponent,
     ReadMoreComponent,
     NavigationComponent,
-    IconComponent
+    IconComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,9 @@ import { environment } from '../environments/environment';
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register("ngsw-worker.js", {
+      enabled: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

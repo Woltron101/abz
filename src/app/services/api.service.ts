@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, Subject } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -33,10 +34,10 @@ export class ApiService {
     return this.http.get(this.apiUrl + "users/" + num);
   }
 
-  public postUser(data): void {
-    this.http
+  public postUser(data): Observable<any> {
+    return this.http
       .post(this.apiUrl + "users", data, { headers: this.headers })
-      .subscribe(resp => this.$postUser.next(resp["user_id"]));
+      .pipe(map(resp => this.$postUser.next(resp["user_id"])));
   }
 
   private getToken(): void {

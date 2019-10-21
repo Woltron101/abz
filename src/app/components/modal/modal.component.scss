@@ -1,0 +1,50 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(22, 12, 13, 0.3);
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+.modal {
+  position: fixed;
+  width: 290px;
+  min-height: 178px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px 25px 60px;
+}
+h3 {
+  color: #000000;
+  font-family: "Overpass";
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0;
+}
+p {
+  color: #393939;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  line-height: 22px;
+}
+.ok {
+  color: #ef6c00;
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}

@@ -12,6 +12,7 @@ export class RegFormComponent implements OnInit {
   userRegForm: FormGroup;
   inputValue: string;
   positions: Position[];
+  modalContent: string[] = [];
   small: boolean = window.innerWidth < 480;
 
   constructor(private api: ApiService) {}
@@ -30,7 +31,7 @@ export class RegFormComponent implements OnInit {
       email: new FormControl("", [
         Validators.required,
         Validators.pattern(
-          "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|'([]!#-[^-~ \t]|(\\[\t -~]))+')@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
+          "^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|'(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*')@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)$"
         )
       ]),
       phone: new FormControl("", [
@@ -51,7 +52,17 @@ export class RegFormComponent implements OnInit {
     values.phone = "+380" + values.phone;
     values.position_id = +values.position_id;
     for (let key in values) formData.append(key, values[key]);
-    this.api.postUser(formData);
+    this.api.postUser(formData).subscribe(
+      resp =>
+        (this.modalContent = ["You have successfully passed the registration"]),
+      err => {
+        console.log("err ", err.error.fails);
+
+        for (let e in err.error.fails)
+          err.error.fails[e].forEach(item => this.modalContent.push(item));
+        console.log("this.modalContent ", this.modalContent);
+      }
+    );
   }
 
   validateOnChanges(formControlName: string): boolean {
@@ -85,5 +96,8 @@ export class RegFormComponent implements OnInit {
         else this.userRegForm.get("photo").setErrors({ incorrect: true });
       };
     }
+  }
+  closeModal() {
+    this.modalContent = [];
   }
 }

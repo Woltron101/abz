@@ -1,0 +1,13 @@
+<div class="modal">
+  <h3
+    *ngIf="
+      content && content[0] == 'You have successfully passed the registration';
+      else err
+    "
+  >
+    Congratulations
+  </h3>
+  <ng-template #err><h3 #err>Error</h3></ng-template>
+  <p *ngFor="let item of content">{{ item }}</p>
+  <button class="ok" (click)="close()">ok</button>
+</div>
